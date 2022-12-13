@@ -1,0 +1,8 @@
+export const PRODUCTS = [
+    {id: 1 , category: 'Pantalones', title: "Pantalón de jeans Mom" , description: "Pantalón de Jeans corte Mom" , img: "https://http2.mlstatic.com/D_NQ_NP_781930-MLA48498795839_122021-W.jpg" , price: 9000 , stock: 10 },
+    {id: 2 , category: 'Pantalones', title: "Pantalón sastrero" , description: "Pantalón de vestir sastrero" , img: "https://i.pinimg.com/564x/f6/ee/c5/f6eec5056ee56ba7624fc593857ca5bd.jpg" , price: 8500 , stock: 5 },
+    {id: 3 , category: 'Vestidos', title: "Vestido" , description: "Vestido largo, estampado de verano" , img: "https://images.unsplash.com/photo-1668789466501-f9c8b4ca7e42?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80" , price: 8500 , stock: 4 },
+    {id: 4 , category: 'Remeras', title: "Remeras" , description: "Remera de Algodón" , img: "https://i.pinimg.com/236x/61/eb/1d/61eb1d1be7ab37aeba28d4001e9fdccb.jpg" , price: 4500 , stock: 12 },
+    {id: 5 , category: 'Accesorios', title: "Pañuelo de seda" , description: "Pañuelo de seda estampado" , img: "https://http2.mlstatic.com/D_NQ_NP_657803-MLA41825078137_052020-O.jpg" , price: 2500 , stock: 10 },
+    {id: 6 , category: 'Accesorios', title: "Aros" , description: "Aros de plata con piedras" , img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTlnySnDwUtljrFahEkMLVSkYfpltT3lQe_McJEZ2A6BFbhDT-hK-AgM4nEobXkRoGrbSA&usqp=CAU" , price: 1000 , stock: 5 }
+]
