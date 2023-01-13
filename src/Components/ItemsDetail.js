@@ -1,11 +1,27 @@
-import { useEffect, useState } from "react"
-import { useParams } from "react-router-dom"
+import { useContext, useEffect, useState } from "react"
+import { Link, useParams } from "react-router-dom"
+import { CartContext } from "../Context/CartContext"
 import { PRODUCTS } from "../Moks/category"
 import { ItemCount } from "./ItemCount"
 
-export const ItemsDetail = () => {
+export const ItemsDetail = ( {items} ) => {
     
+    const { addToCart, setAddToCart } = useContext(CartContext)
+    const [quantity, setQuantity] = useState()
+
+    
+    const [purchase, setPurchase] =useState(false)
+
+    /* const onAdd = (quantity) => {
+        setAddToCart(true)
+    } */
     const [item, setItem] = useState({})
+    const onAddHandler = (item, cantidad) => {
+        addToCart(item, cantidad)
+        setQuantity(cantidad)
+        setPurchase(!purchase)
+    }
+
     const { id } = useParams()
 
     useEffect(() => {
@@ -26,14 +42,27 @@ export const ItemsDetail = () => {
     return (
         <div className="flex flex-row">
             <div className="card-body">
-                <div className="first-letter:card w-96 bg-base-100 shadow-xl m-3">
-                    <figure>{item.img}</figure>
+                <div  className="first-letter:card w-96 bg-base-100 shadow-xl m-3">
                     <h1> Detalles de producto  { id }</h1>
                     <li> {item.title} </li>
+                    <div>
+                        <img className='img' src={item.img} alt={`Imagen del producto ${item.title}`} />
+                    </div>  
                     <li> {item.description} </li>
                     <li> ${item.price} </li>
                     <ItemCount stock={item.stock} />
-                    <button className='btn bg-pink-400'>Agregar al carrito</button>
+                    <div>
+                        {    
+                            !purchase ? (
+                                <button onClick= { onAddHandler } className='btn bg-pink-400'>Agregar al carrito</button>
+                            ) : (
+
+                                <>
+                                <Link to='/Cart' className= "btn bg-pink-400"> Ir al carrito </Link>
+                                </>
+                            )    
+                        }
+                    </div>
                 </div>  
             </div>
         </div>
